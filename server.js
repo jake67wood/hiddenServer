@@ -17,7 +17,7 @@ app.use(session({
 }))
 
 app.use(cors({
-    origin:'http://localhost:8888',
+    origin:'https://hiddenfrontend.onrender.com',
     credentials: true,
     methods: ['GET','POST']
 }));
