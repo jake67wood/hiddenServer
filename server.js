@@ -24,10 +24,9 @@ app.use(cors({
 app.use(bodyParser.json());
 
 const db = require('./config/db');
-db.connect((err) => {
-    if (err) throw err;
-    console.log('postgreSQL connected');
-});
+db.connect()
+  .then(() => console.log("✅ Conexión exitosa a PostgreSQL en Render"))
+  .catch(err => console.error("❌ Error conectando a PostgreSQL:", err.message));
 
 const authRoutes = require('./routes/authRoutes');
 app.use('/api/auth', authRoutes);
