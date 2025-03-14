@@ -1,4 +1,4 @@
-import { config } from 'dotenv'
+const { config } = require('dotenv')
 config()
 
 export const PAYPAL_API_CLIENT = process.env.PAYPAL_API_CLIENT
