@@ -2,10 +2,22 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const session = require('express-session')
+const PgSession = require("connect-pg-simple")(session);
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL, // Usa tu variable de entorno con la URL de la BD en Render
+  ssl: {
+    rejectUnauthorized: false, // Necesario para Render
+  },
+});
+
 app.use(session({
+    store: new PgSession({
+      pool, // Conexión a la base de datos
+      tableName: "session", // Nombre de la tabla en la BD
+    }),
     secret: 'secret',
     resave: false,
     saveUninitialized: false,
