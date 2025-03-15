@@ -3,6 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const session = require('express-session')
 const PgSession = require("connect-pg-simple")(session);
+const { Pool } = require("pg");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
