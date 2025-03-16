@@ -40,8 +40,10 @@ exports.register = (req, res) => {
 };
 exports.session = (req,res)=>{
     if (req.session.user) {
+        console.log('checar sesion')
         res.status(200).json({user: req.session.user})
     } else {
+        console.log('no sesion')
         res.status(401).json({message: 'Not autheticated'})
     }
 }
