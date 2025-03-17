@@ -45,13 +45,13 @@ exports.register = (req, res) => {
 };
 exports.session = async (req,res)=>{
   const { username } = req.params;
-        console.log('userNAME',username.username)
+        console.log('userNAME',username)
 
   try {
     // Busca al usuario en la base de datos
     const userResult = await db.query(
       'SELECT * FROM users WHERE email = $1',
-      [username.username]
+      [username]
     );
 
     if (userResult.rows.length === 0) {
