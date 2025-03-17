@@ -61,7 +61,7 @@ exports.session = async (req,res)=>{
     const user = userResult.rows[0];
 
     // Responde con el estado de la sesión
-    res.status(200).json({ user: user.is_logged_in });
+    res.status(200).json({ user: user.email });
   } catch (error) {
     console.error('Error al verificar sesión:', error);
     res.status(500).json({ message: 'Error en el servidor' });
