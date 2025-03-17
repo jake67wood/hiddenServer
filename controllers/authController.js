@@ -51,7 +51,7 @@ exports.session = async (req,res)=>{
     // Busca al usuario en la base de datos
     const userResult = await db.query(
       'SELECT * FROM users WHERE email = $1',
-      [username]
+      [username.username]
     );
 
     if (userResult.rows.length === 0) {
