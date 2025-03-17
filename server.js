@@ -15,10 +15,10 @@ const pool = new Pool({
 });
 
 app.use(session({
-    store: new PgSession({
+   /*  store: new PgSession({
       pool, // Conexión a la base de datos
       tableName: "session", // Nombre de la tabla en la BD
-    }),
+    }), */
     secret: 'secret',
     resave: false,
     saveUninitialized: false,
