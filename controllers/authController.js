@@ -78,7 +78,7 @@ exports.session = async (req,res)=>{
 exports.logout = async (req,res)=>{
 
       const { username } = req.body;
-
+          console.log('check logout',username)
   try {
     // Busca al usuario en la base de datos
     const userResult = await db.query(
