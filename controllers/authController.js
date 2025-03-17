@@ -28,7 +28,7 @@ exports.login = async (req, res) => {
       [user.id]
     );
         /* req.session.user = { username } */
-        res.status(200).json({ message: 'Login successful',user: req.session.user });
+        res.status(200).json({ message: 'Login successful',user: { username } });
     }
 };
 
