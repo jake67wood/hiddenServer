@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post('/login', login);
 router.post('/register', register);
-router.get('/session', session)
+router.get('/session/:username', session)
 router.post('/logout', logout)
 
 router.post('/paypal/create-order', createOrder)
