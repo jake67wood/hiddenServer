@@ -48,7 +48,7 @@ exports.session = async (req,res)=>{
 
   try {
     // Busca al usuario en la base de datos
-    const userResult = await pool.query(
+    const userResult = await db.query(
       'SELECT * FROM users WHERE email = $1',
       [username]
     );
