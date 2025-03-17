@@ -74,7 +74,7 @@ exports.session = async (req,res)=>{
         res.status(401).json({message: 'Not autheticated'})
     } */
 }
-exports.logout = (req,res)=>{
+exports.logout = async (req,res)=>{
 
       const { username } = req.body;
 
