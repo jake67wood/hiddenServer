@@ -45,7 +45,7 @@ exports.register = (req, res) => {
 };
 exports.session = async (req,res)=>{
   const { username } = req.params;
-        console.log('userNAME',username)
+        console.log('userNAME',username.username)
 
   try {
     // Busca al usuario en la base de datos
@@ -55,6 +55,8 @@ exports.session = async (req,res)=>{
     );
 
     if (userResult.rows.length === 0) {
+        console.log('Usuario no encontrado')
+        
       return res.status(404).json({ message: 'Usuario no encontrado' });
     }
 
@@ -62,6 +64,8 @@ exports.session = async (req,res)=>{
 
     // Responde con el estado de la sesión
     res.status(200).json({ user: user.email });
+        console.log('Usuario encontrado')
+      
   } catch (error) {
     console.error('Error al verificar sesión:', error);
     res.status(500).json({ message: 'Error en el servidor' });
