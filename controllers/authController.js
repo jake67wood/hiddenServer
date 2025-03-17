@@ -45,6 +45,7 @@ exports.register = (req, res) => {
 };
 exports.session = async (req,res)=>{
   const { username } = req.params;
+        console.log('userNAME',username)
 
   try {
     // Busca al usuario en la base de datos
