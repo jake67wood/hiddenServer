@@ -106,7 +106,7 @@ exports.captureOrder = async (req,res)=>{
         }
         const message = {
             from: `${resu[0].email}`,
-            to: 'jose20.jmmorales@gmail.com',
+            to: 'jakewood6788@gmail.com',
             subject: 'Test mail',
             html: `
         <div style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; border-radius: 10px; max-width: 600px; margin: auto;">
