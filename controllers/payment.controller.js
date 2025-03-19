@@ -66,12 +66,15 @@ exports.createOrder = async (req,res)=>{
 }
 exports.captureOrder = async (req,res)=>{
     const {token} = req.query
+    console.log('capture order before',token)
+    
     const response = await  axios.post(`${PAYPAL_API}/v2/checkout/orders/${token}/capture`,{},{
         auth: {
             username: PAYPAL_API_CLIENT,
             password: PAYPAL_API_SECRET
         }
     })
+    console.log('capture order after',token)
 
     console.log(response.data)
 
