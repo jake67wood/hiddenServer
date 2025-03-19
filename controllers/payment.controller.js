@@ -75,8 +75,8 @@ exports.captureOrder = async (req,res)=>{
         }
     })
     console.log('capture order after',token)
-
-    console.log(response.data)
+console.log(response.data.status)
+    /* console.log(response.data) */
 
     // 🔹 Marcar la orden como pagada en MySQL
     const sql = `
